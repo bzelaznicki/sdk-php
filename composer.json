@@ -13,14 +13,20 @@
     },
     "autoload": {
         "psr-4": {
-            "Getresponse\\Sdk\\": "src/",
-            "Getresponse\\Sdk\\Test\\": "tests/"
+            "Getresponse\\Sdk\\": "src/"
         }
     },
+    "autoload-dev": {
+	    "psr-4": {
+		"Getresponse\\Sdk\\Test\\": "tests/"
+	    }
+    },
     "require": {
-        "getresponse/sdk-php-client": "^2.0"
+	"php": "^8.1",
+        "getresponse/sdk-php-client": "^2.0",
+	"ext-curl": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^10.5"
     }
 }
