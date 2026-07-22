@@ -12,39 +12,39 @@ use Psr\Http\Message\RequestInterface;
  */
 abstract class GetResponseEnterprise implements Environment
 {
-    /**
-     * @var string
-     */
-    private $domain;
+	/**
+	 * @var string
+	 */
+	private string $domain;
 
-    /**
-     * GetResponseEnterprise constructor.
-     * @param string $domain
-     * @throws InvalidDomainException
-     */
-    public function __construct($domain)
-    {
-        $this->validateDomain($domain);
-        $this->domain = $domain;
-    }
+	/**
+	 * GetResponseEnterprise constructor.
+	 * @param string $domain
+	 * @throws InvalidDomainException
+	 */
+	public function __construct(string $domain)
+	{
+		$this->validateDomain($domain);
+		$this->domain = $domain;
+	}
 
-    /**
-     * @param RequestInterface $request
-     * @return RequestInterface
-     */
-    public function processRequest(RequestInterface $request)
-    {
-        return $request->withHeader('X-Domain', $this->domain);
-    }
+	/**
+	 * @param RequestInterface $request
+	 * @return RequestInterface
+	 */
+	public function processRequest(RequestInterface $request): RequestInterface
+	{
+		return $request->withHeader('X-Domain', $this->domain);
+	}
 
-    /**
-     * @param string $domain
-     * @throws InvalidDomainException
-     */
-    private function validateDomain($domain)
-    {
-        if (!preg_match('/^(?!www\\.)(?:(?:[a-zA-Z0-9]|(?<=[a-zA-Z0-9])-+(?=[a-zA-Z0-9])){1,63}\\.)+[a-zA-Z]{2,8}$/i', $domain)) {
-            throw new InvalidDomainException('The provided GetResponse Enterprise domain is invalid');
-        }
-    }
+	/**
+	 * @param string $domain
+	 * @throws InvalidDomainException
+	 */
+	private function validateDomain(string $domain): void
+	{
+		if (!preg_match('/^(?!www\\.)(?:(?:[a-zA-Z0-9]|(?<=[a-zA-Z0-9])-+(?=[a-zA-Z0-9])){1,63}\\.)+[a-zA-Z]{2,8}$/i', $domain)) {
+			throw new InvalidDomainException('The provided GetResponse Enterprise domain is invalid');
+		}
+	}
 }
