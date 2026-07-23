@@ -35,8 +35,8 @@ $client = new GetresponseClient(
    * `CurlMultiRequestHandler` - cURL handler with simultaneous requests support. Use this handler for handling big number of requests to speed up the processing, please note maximum number of concurrent request is limited by throttling limits ([Refer to API limit and throttling documentation](https://apidocs.getresponse.com/v3/limits))
  * `Enviroment` implementation - one of the following (depending on your account type):
    * `GetResponse` - for Basic, Plus and Professional package users
-   * `GetResponseEnterprisePL` - for Enterprise users (ask your Account Manager for details)
-   * `GetResponseEnterpriseUS` - for Enterprise users (ask your Account Manager for details)
+   * `GetResponseMaxPL` - for GetResponse MAX users (ask your Customer Experience Manager for details)
+   * `GetResponseMaxUS` - for GetResponse MAX users (ask your Customer Experience Manager for details)
  * `AuthenticationProvider` implementation - we provide:
    * `ApiKey` - API Key based authentication
    * `OAuth` - OAuth2 access token base authentication
@@ -46,11 +46,11 @@ $client = new GetresponseClient(
 We strongly suggest you use the dedicated factory methods to initialize the preconfigured client. Depending on your project you can use:
 
 * `GetresponseClientFactory::createWithApiKey($apiKey)` - returns the client configured for GetResponse environment and the API Key authorization method
-* `GetresponseClientFactory::createEnterprisePLWithApiKey($apiKey, $domain)` - returns the client configured for the Enterprise PL environment and the API Key authorization method
-* `GetresponseClientFactory::createEnterpriseUSWithApiKey($apiKey, $domain)` - returns the client configured for the Enterprise US environment and the API Key authorization method
+* `GetresponseClientFactory::createMaxPLWithApiKey($apiKey, $domain)` - returns the client configured for the Max PL environment and the API Key authorization method
+* `GetresponseClientFactory::createMaxUSWithApiKey($apiKey, $domain)` - returns the client configured for the MAX US environment and the API Key authorization method
 * `GetresponseClientFactory::createWithAccessToken($accessToken)` - returns the client configured for the GetResponse environment and the OAuth2 authorization method
-* `GetresponseClientFactory::createEnterprisePLWithAccessToken($accessToken, $domain)` - returns the client configured for the GetResponse Enterprise PL environment and the OAuth2 authorization method
-* `GetresponseClientFactory::createEnterpriseUSWithAccessToken($accessToken, $domain)` - returns the client configured for the GetResponse Enterprise US environment and the OAuth2 authorization method
+* `GetresponseClientFactory::createMaxPLWithAccessToken($accessToken, $domain)` - returns the client configured for the GetResponse MAX PL environment and the OAuth2 authorization method
+* `GetresponseClientFactory::createMaxUSWithAccessToken($accessToken, $domain)` - returns the client configured for the GetResponse MAX US environment and the OAuth2 authorization method
 
 [Where do I find the API Key?](https://www.getresponse.com/help/integrations-and-api/where-do-i-find-the-api-key.html)
 

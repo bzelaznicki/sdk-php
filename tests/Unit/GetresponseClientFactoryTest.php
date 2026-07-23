@@ -12,63 +12,63 @@ use PHPUnit\Framework\TestCase;
  */
 class GetresponseClientFactoryTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function shouldCreateWithApiKey()
-    {
-        $client = GetresponseClientFactory::createWithApiKey('apiKey');
+	/**
+	 * @test
+	 */
+	public function shouldCreateWithApiKey()
+	{
+		$client = GetresponseClientFactory::createWithApiKey('apiKey');
 
-        self::assertInstanceOf(GetresponseClient::class, $client);
-    }
+		self::assertInstanceOf(GetresponseClient::class, $client);
+	}
 
-    /**
-     * @test
-     */
-    public function shouldCreateEnterprisePLWithApiKey()
-    {
-        $client = GetresponseClientFactory::createEnterprisePLWithApiKey('apiKey', 'domain.com');
+	/**
+	 * @test
+	 */
+	public function shouldCreateMaxPLWithApiKey()
+	{
+		$client = GetresponseClientFactory::createMaxPLWithApiKey('apiKey', 'domain.com');
 
-        self::assertInstanceOf(GetresponseClient::class, $client);
-    }
+		self::assertInstanceOf(GetresponseClient::class, $client);
+	}
 
-    /**
-     * @test
-     */
-    public function shouldCreateEnterpriseUSWithApiKey()
-    {
-        $client = GetresponseClientFactory::createEnterpriseUSWithApiKey('apiKey', 'domain.com');
+	/**
+	 * @test
+	 */
+	public function shouldCreateMaxUSWithApiKey()
+	{
+		$client = GetresponseClientFactory::createMaxUSWithApiKey('apiKey', 'domain.com');
 
-        self::assertInstanceOf(GetresponseClient::class, $client);
-    }
+		self::assertInstanceOf(GetresponseClient::class, $client);
+	}
 
-    /**
-     * @test
-     */
-    public function shouldCreateWithAccessToken()
-    {
-        $client = GetresponseClientFactory::createWithAccessToken('accessToken');
+	/**
+	 * @test
+	 */
+	public function shouldCreateWithAccessToken()
+	{
+		$client = GetresponseClientFactory::createWithAccessToken('accessToken');
 
-        self::assertInstanceOf(GetresponseClient::class, $client);
-    }
+		self::assertInstanceOf(GetresponseClient::class, $client);
+	}
 
-    /**
-     * @test
-     */
-    public function shouldCreate360PLWithAccessToken()
-    {
-        $client = GetresponseClientFactory::createEnterprisePLWithAccessToken('accessToken', 'domain.com');
+	/**
+	 * @test
+	 */
+	public function shouldCreate360PLWithAccessToken()
+	{
+		$client = GetresponseClientFactory::createMaxPLWithAccessToken('accessToken', 'domain.com');
 
-        self::assertInstanceOf(GetresponseClient::class, $client);
-    }
+		self::assertInstanceOf(GetresponseClient::class, $client);
+	}
 
-    /**
-     * @test
-     */
-    public function shouldCreateEnterpriseUSWithAccessToken()
-    {
-        $client = GetresponseClientFactory::createEnterpriseUSWithAccessToken('accessToken', 'domain.com');
+	/**
+	 * @test
+	 */
+	public function shouldCreateMaxUSWithAccessToken()
+	{
+		$client = GetresponseClientFactory::createMaxUSWithAccessToken('accessToken', 'domain.com');
 
-        self::assertInstanceOf(GetresponseClient::class, $client);
-    }
+		self::assertInstanceOf(GetresponseClient::class, $client);
+	}
 }

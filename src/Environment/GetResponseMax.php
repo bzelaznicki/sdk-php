@@ -10,7 +10,7 @@ use Psr\Http\Message\RequestInterface;
  * Class GetResponseEnterprise
  * @package Getresponse\Sdk\Environment
  */
-abstract class GetResponseEnterprise implements Environment
+abstract class GetResponseMax implements Environment
 {
 	/**
 	 * @var string

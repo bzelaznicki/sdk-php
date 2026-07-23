@@ -60,16 +60,16 @@ API_KEY should be defined in the environment variable. You should define it in t
 
 Please see the `GetResponseClientFactory` class from `PHP SDK` for other factories.
 
-### Enterprise users
+### Max users
 
-For the Enterprise environment please use one of the Enterprise factories, e.g.:
+For the Max environment please use one of the MAX factories, e.g.:
 
 ```php
 <?php
 
 use Getresponse\Sdk\GetresponseClientFactory;
 
-$client = GetresponseClientFactory::createEnterprisePLWithApiKey('my_api_key', 'myexampledomain.com');
+$client = GetresponseClientFactory::createMaxPLWithApiKey('my_api_key', 'myexampledomain.com');
 
 ```
 or:
@@ -79,7 +79,7 @@ or:
 
 use Getresponse\Sdk\GetresponseClientFactory;
 
-$client = GetresponseClientFactory::createEnterpriseUSWithApiKey('my_api_key', 'myexampledomain.com');
+$client = GetresponseClientFactory::createMaxUSWithApiKey('my_api_key', 'myexampledomain.com');
 
 ```
 

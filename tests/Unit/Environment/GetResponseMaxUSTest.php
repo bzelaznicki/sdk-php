@@ -3,24 +3,24 @@
 namespace Getresponse\Sdk\Client\Test\Unit\Environment;
 
 use Getresponse\Sdk\Client\Exception\InvalidDomainException;
-use Getresponse\Sdk\Environment\GetResponseEnterpriseUS;
+use Getresponse\Sdk\Environment\GetResponseMaxUS;
 use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class GetResponseEnterpriseUSTest
+ * Class GetResponseMaxUSTest
  * @package Getresponse\Sdk\Client\Test\Unit\Environment
  */
-class GetResponseEnterpriseUSTest extends TestCase
+class GetResponseMaxUSTest extends TestCase
 {
 	/**
-	 * @var GetResponseEnterpriseUS
+	 * @var GetResponseMaxUS
 	 */
 	private $systemUnderTest;
 
 	protected function setUp(): void
 	{
-		$this->systemUnderTest = new GetResponseEnterpriseUS('custom-domain.getresponse360.com');
+		$this->systemUnderTest = new GetResponseMaxUS('custom-domain.getresponse360.com');
 	}
 
 	/**
@@ -53,7 +53,7 @@ class GetResponseEnterpriseUSTest extends TestCase
 	public function shouldThrowExceptionIfDomainIsNotValid($domain)
 	{
 		$this->expectException(InvalidDomainException::class);
-		new GetResponseEnterpriseUS($domain);
+		new GetResponseMaxUS($domain);
 	}
 
 	/**
